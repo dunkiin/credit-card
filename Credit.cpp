@@ -16,7 +16,7 @@ int getSumOfDigits(int analyzeNumber) {
 
     while (analyzeNumber != 0) {
         sum += analyzeNumber % 10;
-        analyzeNumber /= 10;
+        analyzeNumber /= 10;    // remove the last digit
 
     }
 
@@ -32,6 +32,7 @@ int getSumOfDigits(int analyzeNumber) {
 
 // check if cardNumber starts by given prefix
 bool startsWith(std::string cardNumber, std::string prefix) {
+    // use substr to check the first string match the prefix string or not
     if (cardNumber.substr(0, prefix.size()) == prefix) {
         return true;
     }
@@ -48,10 +49,12 @@ bool startsWith(std::string cardNumber, std::string prefix) {
 // file and create a const array of strings there (validPrefixes).
 // that you can reference in this function.
 // hint: you can make use of startsWith() in this function.
+
+// check if the cardNumber include any prefix
 bool hasValidPrefix(std::string cardNumber) {
     for (int i = 0; i < Constants::validPrefixes->size(); i++) {
         if (startsWith(cardNumber, Constants::validPrefixes[i])) {
-            return true;
+            return true;    // return true, if valid prefixes is found
         }
     }
     return false;
