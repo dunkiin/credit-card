@@ -9,7 +9,9 @@ int main() {
     //std::cout << getSumOfDigits(123) << '\n';
     //std::cout << startsWith(testCard, "34") << '\n';
     //std::cout << hasValidPrefix(testCard) << '\n';
-    std::cout << sumOddDigitsRightToLeft(testCard) << '\n';
+    //std::cout << sumOddDigitsRightToLeft(testCard) << '\n';
+    std::cout << sumEvenDigitsRightToLeft(testCard) << '\n';
+    std::cout << isCardValid(testCard) << '\n';
     
 }
 

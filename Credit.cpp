@@ -90,7 +90,18 @@ int sumOddDigitsRightToLeft(std::string& cardNumber) {
 // their digits together before being added into the sequence.
 // Eg: "34567" returns 11. ((6*2 = 12, converted to 1+2 = 3) + (4*2)) equals 11
 // hint: make use of getSumOfDigits(std::string cardNumber)
-//int sumEvenDigitsRightToLeft(std::string cardNumber);
+int sumEvenDigitsRightToLeft(std::string& cardNumber) {
+    int sum = 0;
+    int card = static_cast<int>(cardNumber.size());
+    
+    for (int i = card - 2; i >= 0; i -= 2) {
+        if (cardNumber[i] / 2) {
+            sum += getSumOfDigits((cardNumber[i] - '0') * 2);
+        }
+    }
+
+    return sum;
+}
 
 
 // Determine if a card # is valid. Valid if:
