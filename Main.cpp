@@ -3,7 +3,7 @@
 
 #include <string>
 int main() {
-    std::string testCard = "34567";
+    std::string testCard = "4388576018410707";
 
     std::cout << "Hello World!\n";
     //std::cout << getSumOfDigits(123) << '\n';

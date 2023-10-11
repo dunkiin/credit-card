@@ -113,4 +113,24 @@ int sumEvenDigitsRightToLeft(std::string& cardNumber) {
 // all the others.
 // - param 1: a string to represent the cardNumber
 // - return: true if the card number is valid (false otherwise)
-//bool isCardValid(std::string cardNumber);
+bool isCardValid(std::string cardNumber) {
+    // between 13 & 16
+    if (cardNumber.size() < 13 || cardNumber.size() > 16) {
+        return false;
+    }
+
+    // valid prefix
+    if (!hasValidPrefix(cardNumber)) {
+        return false;
+    }
+
+    // calculate the sum of digits
+    int sum = sumOddDigitsRightToLeft(cardNumber) + sumEvenDigitsRightToLeft(cardNumber);
+    
+    if (sum % 10) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
