@@ -2,6 +2,7 @@
 #define Credit_h
 
 #include <string>
+
 namespace Constants {
 	const std::string validPrefixes[] = { "4", "5", "6", "37" };
 }
@@ -39,7 +40,7 @@ bool hasValidPrefix(std::string cardNumber);
 // - return: the sum of odd-place digits from right to left in the card
 // number (step 1, part 3).
 // Eg: "34567" returns 15. (7+5+3)
-int sumOddDigitsRightToLeft(std::string cardNumber);
+int sumOddDigitsRightToLeft(std::string& cardNumber);
 
 
 // Add up the even-place digits from right to left

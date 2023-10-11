@@ -66,7 +66,20 @@ bool hasValidPrefix(std::string cardNumber) {
 // - return: the sum of odd-place digits from right to left in the card
 // number (step 1, part 3).
 // Eg: "34567" returns 15. (7+5+3)
-//int sumOddDigitsRightToLeft(std::string cardNumber);
+// 
+int sumOddDigitsRightToLeft(std::string& cardNumber) {
+    int sum = 0;
+    int card = static_cast<int>(cardNumber.size());
+    //std::cout << card << '\n';
+
+    for (int i = card; i >= 0; i--) {
+        if (cardNumber[i] % 2) {
+            sum += cardNumber[i] - '0';
+            //std::cout << sum << '\n';
+        }
+    }
+    return sum;
+}
 
 
 // Add up the even-place digits from right to left
